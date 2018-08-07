@@ -22,6 +22,7 @@ h = np.arange(min(gauss),max(gauss),sirina(sigma,len(gauss)))
 histogram = plt.subplot(211)
 n, bins, patches = plt.hist(gauss, bins=h, density=1)
 plt.grid(True)
+plt.title('Histogram in denziteta')
 
 pdf =  stats.gaussian_kde(gauss)
 x = np.linspace(floor(min(gauss)),ceil(max(gauss)), 10000)
@@ -45,6 +46,9 @@ distribucija = plt.subplot(212, sharex = histogram)
 d = np.arange(min(gauss), max(gauss), 0.01)
 plt.plot(d, ecdf(d))
 plt.grid(True)
+plt.title('Distribucija')
+
+plt.subplots_adjust(hspace=0.5)
 
 
 plt.show()
